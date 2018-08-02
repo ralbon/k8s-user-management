@@ -1,0 +1,19 @@
+
+kind: Config
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: ${P_CERT_AUTH_DATA}
+    server: ${P_SERVER}
+  name: ${P_CLUSTER_NAME}
+contexts:
+- context:
+    cluster: ${P_CLUSTER_NAME}
+    namespace: ${P_NAMESPACE}
+    user: ${P_USER}
+  name: ${P_CLUSTER_NAME}
+current-context: ${P_CLUSTER_NAME}
+users:
+- name: ${P_USER}
+  user:
+    token: ${P_USER_TOKEN}

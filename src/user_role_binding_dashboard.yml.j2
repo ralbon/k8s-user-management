@@ -1,0 +1,13 @@
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ${P_USER}-${P_NAMESPACE}-binding-dashboard
+subjects:
+- kind: ServiceAccount
+  name: ${P_USER}
+  namespace: ${P_NAMESPACE}
+roleRef:
+  kind: ClusterRole
+  name: user-role-dashboard
+  apiGroup: rbac.authorization.k8s.io
